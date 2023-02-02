@@ -1,0 +1,57 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+Running some quick sentiment analysis 
+
+```{r, message = FASLE}
+library(readr)
+library(syuzhet)
+library(readxl)
+library(tidyverse)
+```
+
+
+Reading in the data
+```{r}
+Black_Interviewees = read_excel("black-interviewees-only.xlsx")
+White_Interviewees = read_excel("white-interviewees-only.xlsx")
+head(Black_Interviewees)
+head(White_Interviewees)
+
+```
+
+Some intialization before sentiment analyis
+```{r}
+Black_Interviewees_Text = tibble(text = str_to_lower(Black_Interviewees$plain_text))
+White_Interviewees_Text = tibble(text = str_to_lower(White_Interviewees$plain_text))
+
+```
+
+
+Sentiment Analysis using syuzhet package (NRC sentiment dicitionary)
+```{r}
+Black_Emotions = get_nrc_sentiment(Black_Interviewees_Text$text)
+Black_Emotions_Bar = colMeans(Black_Emotions[sapply(Black_Emotions, is.numeric)])
+Black_Emotions_Sum = data.frame(count = Black_Emotions_Bar, emotion = names(Black_Emotions_Bar))
+Black_Emotions_Bar
+
+
+White_Emotions = get_nrc_sentiment(White_Interviewees_Text$text)
+White_Emotions_Bar = colMeans(White_Emotions[sapply(White_Emotions, is.numeric)])
+White_Emotions_Sum = data.frame(count = White_Emotions_Bar, emotion = names(White_Emotions_Bar))
+White_Emotions_Bar
+```
+
+Bar plot displaying the sentiment analysis
+```{r}
+par(mar=c(6, 4.1, 4.1, 3))
+barplot(count~emotion, data = Black_Emotions_Sum, cex.names = 0.7, las = 2, xpd = FALSE)
+barplot(count~emotion, data = White_Emotions_Sum, cex.names = 0.7, las = 2)
+
+```
+```{r}
+t.test(Black_Emotions$sadness, White_Emotions$sadness)
+```
+
