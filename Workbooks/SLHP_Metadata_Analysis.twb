@@ -1416,20 +1416,6 @@
               <bucket>&quot;borrower&quot;</bucket>
             </map>
           </encoding>
-          <encoding attr='color' field='[Interviewee Education Level (group)]' type='palette'>
-            <map to='#4e79a7'>
-              <bucket>%null%</bucket>
-            </map>
-            <map to='#76b7b2'>
-              <bucket>&quot;Primary/Secondary&quot;</bucket>
-            </map>
-            <map to='#e15759'>
-              <bucket>&quot;No/Little Education&quot;</bucket>
-            </map>
-            <map to='#f28e2b'>
-              <bucket>&quot;Higher Education&quot;</bucket>
-            </map>
-          </encoding>
           <encoding attr='color' field='[none:interviewee_age:nk]' type='palette'>
             <map to='#59a14f'>
               <bucket>%null%</bucket>
@@ -1481,6 +1467,28 @@
               <bucket>&quot;Edu./Military/Health&quot;</bucket>
             </map>
           </encoding>
+          <encoding attr='color' field='[none:interviewee_sex:nk]' type='palette'>
+            <map to='#4e79a7'>
+              <bucket>&quot;f&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;m&quot;</bucket>
+            </map>
+          </encoding>
+          <encoding attr='color' field='[Interviewee Education Level (group)]' type='palette'>
+            <map to='#4e79a7'>
+              <bucket>%null%</bucket>
+            </map>
+            <map to='#76b7b2'>
+              <bucket>&quot;Primary/Secondary&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;No/Little Education&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;Higher Education&quot;</bucket>
+            </map>
+          </encoding>
           <encoding attr='color' field='[none:current_interviewee_income:nk]' type='palette'>
             <map to='#4e79a7'>
               <bucket>&quot;middle class&quot;</bucket>
@@ -1490,14 +1498,6 @@
             </map>
             <map to='#f28e2b'>
               <bucket>&quot;poverty&quot;</bucket>
-            </map>
-          </encoding>
-          <encoding attr='color' field='[none:interviewee_sex:nk]' type='palette'>
-            <map to='#4e79a7'>
-              <bucket>&quot;f&quot;</bucket>
-            </map>
-            <map to='#f28e2b'>
-              <bucket>&quot;m&quot;</bucket>
             </map>
           </encoding>
         </style-rule>
@@ -3155,8 +3155,8 @@
         <devicelayout auto-generated='true' name='Phone'>
           <size maxheight='800' minheight='800' sizing-mode='vscroll' />
           <zones>
-            <zone h='100000' id='41' type-v2='layout-basic' w='100000' x='0' y='0'>
-              <zone h='98014' id='40' param='vert' type-v2='layout-flow' w='99002' x='499' y='993'>
+            <zone h='100000' id='43' type-v2='layout-basic' w='100000' x='0' y='0'>
+              <zone h='84000' id='42' param='vert' type-v2='layout-flow' w='84000' x='8000' y='8000'>
                 <zone h='8685' id='8' mode='dropdown' name='Counties' param='[federated.1faap0505ze6191fwjq2g042jqy1].[none:interviewee_occupation:nk]' type-v2='filter' w='99002' x='499' y='993'>
                   <zone-style>
                     <format attr='border-color' value='#000000' />
@@ -3289,8 +3289,8 @@
         <devicelayout auto-generated='true' name='Phone'>
           <size maxheight='800' minheight='800' sizing-mode='vscroll' />
           <zones>
-            <zone h='100000' id='38' type-v2='layout-basic' w='100000' x='0' y='0'>
-              <zone h='98000' id='37' param='vert' type-v2='layout-flow' w='98400' x='800' y='1000'>
+            <zone h='100000' id='40' type-v2='layout-basic' w='100000' x='0' y='0'>
+              <zone h='98000' id='39' param='vert' type-v2='layout-flow' w='98400' x='800' y='1000'>
                 <zone h='13500' id='30' type-v2='title' w='98400' x='800' y='1000'>
                   <zone-style>
                     <format attr='border-color' value='#000000' />
